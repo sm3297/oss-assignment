@@ -10,9 +10,10 @@
     .div_navtop{
         color: #f2f2f2;
         background-color: #04AA6D;
-        border-radius: 5px;
-        padding: 15px;
-        font: 100% Lucida Sans, Verdana;
+        border-radius: 3px;
+        padding: 13px;
+        margin : 23px 10px 0px 10px;
+        font: 20px Lucida Sans, Verdana;
     }
     .div_navtop h2{
         margin: 0px;
@@ -22,14 +23,27 @@
         font:900 Lucida Sans, Verdana;
     }
 
+    .div_centercontent a{
+        color : black;
+    }
+
     .div_maincontent{
         display: flex;
-        margin : 0px 0px 0px 0px;
+        margin : 0px 10px 0px 10px;
     }
 
     ul{
         list-style:none;
         padding: 0px;
+    }
+
+    .div_leftcontent{
+        margin-top: -8px;
+    }
+
+    .div_leftcontent a{
+        text-decoration: none;
+        color : black;
     }
 
     .div_leftcontent ul li{
@@ -47,19 +61,26 @@
     }
 
     .div_centercontent{
-        padding: 10px;
+        padding: 15px;
+        line-height: 25px;
+        font-size : 120%;
     }
+
     .div_rightcontent{
-        width : 20vw;
-        margin: 10px 0px 10px 14px; 
-        padding: 10px;
-        border-radius: 5px;
+        width: 55vW;
+        height: 31vh;
+        margin: 10px 0px 10px 10px; 
+        border-radius: 3px;
         color:white;
         background-color: #32a4e7;
+        font: 16px verdana;
+        line-height: 25px;
+        padding: 11px 10px 0px 11px;
+       
     }
 
     .div_rightcontent h4{
-        margin-top: 10px 0px 10px 0px;
+        margin-top: 10px;
     }
 
     .div_footer{
@@ -68,7 +89,13 @@
         background-color: #f1f1f1;
         text-align: center;
         padding:10px 10px;
-        font-size: 70%
+        margin: 0px 10px 10px 10px;
+        font-size: 90%
+    }
+
+    .div_leftcontent ul :hover{
+        cursor: pointer;
+        background-color: white;
     }
 </style>
 
@@ -83,11 +110,11 @@
     <div class="div_maincontent">
         <div class="div_leftcontent">
             <ul>
-                <li class="active">Stylesheet 1</li>
-                <li>Stylesheet 2</li>
-                <li>Stylesheet 3</li>
-                <li>Stylesheet 4</li>
-                <li>No Stylesheet</li>
+                <li class="active" >Stylesheet 1</li>
+                <li><a href="./style2.html">Stylesheet 2</li></a>
+                <li><a href="./style3.html">Stylesheet 3</li></a>
+                <li><a href="./style4.html">Stylesheet 4</li></a>
+                <li><a href="./index.html">No Stylesheet</li></a>
             </ul>
         </div>
 
@@ -102,7 +129,7 @@
                 <a href="./style3.html">Stylesheet3</a>,
                 <a href="./style4.html">Stylesheet4</a>.
             </div>
-            <h3>No Styles</h3>
+            <h2>No Styles</h2>
             This page uses DIV elements to group different sections of the HTML page. Click here to see how
             the page looks like with no stylesheet:
             <div>

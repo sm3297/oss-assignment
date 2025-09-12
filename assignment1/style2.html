@@ -36,6 +36,15 @@ body {
     font: Verdana;
 }
 
+.div_centercontent a{
+    color : #d14836;
+    text-decoration: none;
+}
+
+.div_centercontent a:hover {     
+    text-decoration: underline;
+}
+
 .div_centercontent h1 {
     color: #d14836;
     font-weight: 900;
@@ -57,6 +66,14 @@ body {
     top:10px;
     right:10px;
     width:180px;
+    padding: 0;
+    font: 16px verdana;
+}
+
+.div_rightcontent ul a{
+    text-decoration: none;
+    color : white;
+    font-weight: 9;
 }
 
 ul{
@@ -65,11 +82,10 @@ ul{
 }
 
 .div_rightcontent ul li{
-    width: 150px;
+    width: 155px;
     background-color: #d14836;
     border: 1px solid #d14836;
     border-radius: 40px;
-    color: #ffffff;
     list-style-type: none;
     margin: 10px;
     padding: 5px;
@@ -80,6 +96,12 @@ ul{
 .div_rightcontent ul li.active{
     background-color: white;
     color: #d14836;
+}
+
+.div_rightcontent ul :hover{
+    cursor: pointer;
+    color :  #d14836;
+    background-color: white;
 }
 
 .div_bottomcontent{
@@ -116,11 +138,11 @@ ul{
     <div class="div_maincontent">
         <div class="div_rightcontent">
             <ul>
-                <li>Stylesheet 1</li>
-                <li class="active">Stylesheet 2</li>
-                <li>Stylesheet 3</li>
-                <li>Stylesheet 4</li>
-                <li>No Stylesheet</li>
+                <li><a href="./style1.html">Stylesheet 1</li></a>
+                <li class="active" >Stylesheet 2</li>
+                <li><a href="./style3.html">Stylesheet 3</li></a>
+                <li><a href="./style4.html">Stylesheet 4</li></a>
+                <li><a href="./index.html">No Stylesheet</li></a>
             </ul>
         </div>
 
