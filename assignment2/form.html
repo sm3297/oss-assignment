@@ -61,14 +61,8 @@
         function add() {
 
           var input = document.getElementById("input_fruit");
-          var text = input.value.trim();
-          if (text === "") {
-              alert("추가할 내용을 입력하세요!");
-            return;
-          }
-
+          var text = input.value;
           var i = text.split(","); // , 로 split!
-
 
           for (var j = 0; j < i.length; j++) {
             var tri = i[j].trim();
@@ -83,8 +77,6 @@
           input.focus();
         }
 
-
-        // 목록 전체 삭제
         function del() {
           var list = document.getElementById("itemList").innerHTML = " ";
         }
