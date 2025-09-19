@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>assignment2 - form_nostyle</title>
+</head>
+<body>
+    <div class="center">
+      <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" alt="Bootstrap Logo" width="72" height="57">
+      <h1>Checkout form</h1>
+      <div>
+        Below is an example form built entirely with Bootstrap’s form controls.
+        Each required form group has a validation state that can be triggered
+        by attempting to submit the form without completing it.
+      </div>
+    </div>
+  
+    <form action="form_ok.html" method="POST">
+      <table>
+        <tr>
+          <!-- 왼쪽 -->
+          <td class="leftcontent">
+            <h2 class="content_head">Billing address</h2>
+            <table>
+              <!-- 1행: First / Last name -->
+              <tr class="row0">
+                <td colspan="2" class="first_name">
+                  <label for="first_name">First name</label><br>
+                  <input type="text" id="firstname" required>
+                </td>
+                <td>
+                  <label for="last_name">Last name</label><br>
+                  <input type="text" id="lastname" required>
+                </td>
+              </tr>
+  
+              <!-- 2행: Username -->
+              <tr class="row1">
+                <td colspan="3">
+                  <label for="username">Username</label><br>
+                  <div class="username-box">
+                    <span class="username-prefix">@</span>
+                    <input type="text" id="username" placeholder="Username" required class="username-input">
+                  </div>
+                </td>
+              </tr>
+  
+              <!-- 3행: Email -->
+              <tr class="row3">
+                <td colspan="3">
+                  <label for="email">Email (Optional)</label><br>
+                  <input type="email" id="email" placeholder="you@example.com">
+                </td>
+              </tr>
+  
+              <!-- 4행: Address -->
+              <tr class="row4">
+                <td colspan="3">
+                  <label for="address">Address</label><br>
+                  <input type="text" id="address" placeholder="1234 Main St" required>
+                </td>
+              </tr>
+  
+              <!-- 5행: Address2 -->
+              <tr class="row5">
+                <td colspan="3">
+                  <label for="address2">Address 2 (Optional)</label><br>
+                  <input type="text" id="address2" placeholder="Apartment or suite">
+                </td>
+              </tr>
+  
+              <!-- 6행: Country / State / Zip -->
+              <tr class="row6" >
+                <td colspan="1" class = "conutry">
+                  <label for="country">Country</label><br>
+                  <select id="country" required>
+                    <option value="">Choose...</option>
+                    <option value="1">United States</option>
+                  </select>
+                </td>
+                <td>
+                  <label for="state">State</label><br>
+                  <select id="state" required>
+                    <option value="">Choose...</option>
+                    <option value="1">California</option>
+                  </select>
+                </td>
+                <td>
+                  <label for="zip">Zip</label><br>
+                  <input type="text" id="zip" required>
+                </td>
+              </tr>
+            </table>
+  
+            <hr>
+  
+            <input type="checkbox" id="same_address">
+            <label for="same_address">Shipping address is the same as my billing address</label><br>
+            <input type="checkbox" id="save_info">
+            <label for="save_info">Save this information for next time</label><br>
+  
+            <hr>
+  
+            <h2 class="content_head">Payment</h2>
+            <input type="radio" name="payment_method" id="credit" checked>
+            <label for="credit">Credit card</label><br>
+            <input type="radio" name="payment_method" id="debit">
+            <label for="debit">Debit card</label><br>
+            <input type="radio" name="payment_method" id="paypal">
+            <label for="paypal">PayPal</label><br>
+  
+            <table>
+              <tr>
+                <td colspan="2" class = "name_on_card">
+                  <label for="name_on_card">Name on card</label><br>
+                  <input type="text" id="name_on_card" required>
+                  <div class="under">Full name as displayed on card</div>
+                </td>
+  
+                <td>
+                  <label for="card_number">Credit card number</label><br>
+                  <input type="text" id="card_number" required>
+                </td>
+  
+              </tr>
+  
+              <tr>
+                <td>
+                  <label for="expiration">Expiration</label><br>
+                  <input type="text" id="expiration" class ="expriation" required>
+                </td>
+  
+                <td colspan="1">
+                  <label for="cvv">CVV</label><br>
+                  <input type="text" id="cvv" class ="cvv" required>
+                </td>
+              </tr>
+            </table>
+  
+            <hr>
+            <button type="submit">Continue to checkout</button>
+  
+            <div class="mark">
+              © 2017-2025 Company Name <br />
+              <a href="#">Privacy</a> <a href="#">Terms</a> <a href="#">Support</a>
+            </div>
+          </td>
+  
+          <!-- 오른쪽 -->
+          <td class="rightcontent">
+            <span class="title1">Your cart</span>
+            <span class="title2">3</span>
+            <ul class="list">
+              <li>
+                <div>
+                  <div class="content1">Product name</div>
+                  <div class="content2">Brief description</div>
+                </div>
+                <span class="content3">$12</span>
+              </li>
+              <li>
+                <div>
+                  <div class="content1">Second product</div>
+                  <div class="content2">Brief description</div>
+                </div>
+                <span class="content3">$8</span>
+              </li>
+              <li>
+                <div>
+                  <div class="content1">Third item</div>
+                  <div class="content2">Brief description</div>
+                </div>
+                <span class="content3">$5</span>
+              </li>
+              <li class="other_color">
+                <div>
+                  <div class="content1">Promo code</div>
+                  <div class="other_color1">EXAMPLECODE</div>
+                </div>
+                <span class="content3">- $5</span>
+              </li>
+              <li>
+                <div>Total (USD)</div>
+                <span class="content3_last">$20</span>
+              </li>
+            </ul>
+  
+            <div class="promo">
+              <input type="text" class="input_promo" placeholder="Promo code">
+              <button type="submit1" class="click_promo">Redeem</button>
+            </div>
+  
+            <div class="memo_box">
+              <label for="textarea">Memo</label>
+              <textarea id="textarea" rows="8"></textarea>
+            </div>
+  
+            <div class="date_box">
+              <label for="input_date">Today's Date</label>
+              <input type="date" id="input_date">
+            </div>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+  </html>
+  

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>assignment2-form_style</title>
+  <style>
+    
+    body {
+      max-width: 1000px;
+      font-family: Arial, sans-serif;
+      background-color: #F8F9FA;
+      margin: 50px auto 30px auto;
+      color: #212529;
+    }
+
+    .center {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin: 10px 0;
+      font-weight: 540;
+    }
+
+    .center div {
+      font-size: 16px;
+      line-height: 1.5;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    table {
+      padding : 100;
+    }
+
+    form{
+      margin-left  : 100px;
+    }
+
+    td {
+      vertical-align: top;
+      padding: 8px;
+    }
+
+    h2.content_head {
+      font-size: 17px;
+      margin-bottom: 12px;
+      margin-top: 2px;
+      font-weight: bold;
+    }
+
+    input[type="text"]:not(.username-input):not(.input_promo), input[type="email"], input[type="date"], select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin: 6px 0 8px 0;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+
+    .username-box {
+      display: flex;
+      align-items: center;     
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      overflow: hidden;    
+    }
+
+    .username-prefix {
+      background-color: #e9ecef;
+      padding: 8px 12px;
+      border-right: 1px solid #ced4da;
+    }
+    
+    .username-input {
+      border: none;
+      padding: 8px;
+      flex: 1;
+      outline: none;
+    }
+    
+    hr {
+      border-top: 1px solid #dee2e6;
+      margin : 12px 0px 12px 0px;
+    }
+
+    button[type="submit"] {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 12px;
+      font-size: 16px;
+      width: 100%;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+    .under{
+      font-size: 13px;
+      color: #6c757d;
+      margin-top : -10px;
+    }
+
+    .mark {
+      float: right;
+      font-size: 13px;
+      color: #6c757d;
+      margin-top: 80px;
+    }
+
+    .mark a {
+      color: #007bff;
+      margin: 0px 0px 6px 10px;
+    }
+
+    .title1 {
+      color: #007bff;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .title2 {
+      float: right;
+      background-color: #007bff;
+      color: white;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      text-align: center;
+      line-height: 24px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .list {
+      background-color: white;
+      padding: 0;
+      margin: 20px 0;
+      border: 1px solid #dee2e6;
+      border-radius: 4px;
+    }
+
+    .list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 10px;
+      border-bottom: 1px solid #dee2e6;
+      font-size: 14px;
+    }
+
+    .other_color {
+      background-color: #F8F9FA;
+      color: green;
+    }
+
+    .other_color1 {
+      font-size: 11px;
+      color: green;
+    }
+
+   .content3_last{
+      font-weight: bold;
+    }
+
+    .content2 {
+      font-size: 12px;
+      color: #6c757d;
+    }
+
+    .promo {
+      display: flex;
+      align-items: center;     
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      overflow: hidden;    
+      
+    }
+
+    button[type="submit1"]{
+      background-color: #6c757d;
+      color: white;
+      border: none;
+      border-radius: 0 4px 4px 0;
+      height : 35px;
+      padding: 8px 16px;
+    }
+
+    .input_promo {
+      flex: 1;
+      padding: 8px 12px;
+      border: none;              
+      outline: none;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+    
+    button[type="submit1"]:hover {
+      background-color: #4e5052;
+    }
+
+    .name_on_card{
+      width : 50%;
+    }
+
+    .first_name{
+      width : 50%;
+    }
+
+    .memo_box{
+      margin-top : 10px;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="center">
+    <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" alt="Bootstrap Logo" width="72" height="57">
+    <h1>Checkout form</h1>
+    <div>
+      Below is an example form built entirely with Bootstrap’s form controls.
+      Each required form group has a validation state that can be triggered
+      by attempting to submit the form without completing it.
+    </div>
+  </div>
+
+  <form action="form_ok.html" method="POST">
+    <table>
+      <tr>
+        <!-- 왼쪽 -->
+        <td class="leftcontent">
+          <h2 class="content_head">Billing address</h2>
+          <table>
+            <!-- 1행: First / Last name -->
+            <tr class="row0">
+              <td colspan="2" class="first_name">
+                <label for="first_name">First name</label><br>
+                <input type="text" id="firstname" required>
+              </td>
+              <td>
+                <label for="last_name">Last name</label><br>
+                <input type="text" id="lastname" required>
+              </td>
+            </tr>
+
+            <!-- 2행: Username -->
+            <tr class="row1">
+              <td colspan="3">
+                <label for="username">Username</label><br>
+                <div class="username-box">
+                  <span class="username-prefix">@</span>
+                  <input type="text" id="username" placeholder="Username" required class="username-input">
+                </div>
+              </td>
+            </tr>
+
+            <!-- 3행: Email -->
+            <tr class="row3">
+              <td colspan="3">
+                <label for="email">Email (Optional)</label><br>
+                <input type="email" id="email" placeholder="you@example.com">
+              </td>
+            </tr>
+
+            <!-- 4행: Address -->
+            <tr class="row4">
+              <td colspan="3">
+                <label for="address">Address</label><br>
+                <input type="text" id="address" placeholder="1234 Main St" required>
+              </td>
+            </tr>
+
+            <!-- 5행: Address2 -->
+            <tr class="row5">
+              <td colspan="3">
+                <label for="address2">Address 2 (Optional)</label><br>
+                <input type="text" id="address2" placeholder="Apartment or suite">
+              </td>
+            </tr>
+
+            <!-- 6행: Country / State / Zip -->
+            <tr class="row6" >
+              <td colspan="1" class = "conutry">
+                <label for="country">Country</label><br>
+                <select id="country" required>
+                  <option value="">Choose...</option>
+                  <option value="1">United States</option>
+                </select>
+              </td>
+              <td>
+                <label for="state">State</label><br>
+                <select id="state" required>
+                  <option value="">Choose...</option>
+                  <option value="1">California</option>
+                </select>
+              </td>
+              <td>
+                <label for="zip">Zip</label><br>
+                <input type="text" id="zip" required>
+              </td>
+            </tr>
+          </table>
+
+          <hr>
+
+          <input type="checkbox" id="same_address">
+          <label for="same_address">Shipping address is the same as my billing address</label><br>
+          <input type="checkbox" id="save_info">
+          <label for="save_info">Save this information for next time</label><br>
+
+          <hr>
+
+          <h2 class="content_head">Payment</h2>
+          <input type="radio" name="payment_method" id="credit" checked>
+          <label for="credit">Credit card</label><br>
+          <input type="radio" name="payment_method" id="debit">
+          <label for="debit">Debit card</label><br>
+          <input type="radio" name="payment_method" id="paypal">
+          <label for="paypal">PayPal</label><br>
+
+          <table>
+            <tr>
+              <td colspan="2" class = "name_on_card">
+                <label for="name_on_card">Name on card</label><br>
+                <input type="text" id="name_on_card" required>
+                <div class="under">Full name as displayed on card</div>
+              </td>
+
+              <td>
+                <label for="card_number">Credit card number</label><br>
+                <input type="text" id="card_number" required>
+              </td>
+
+            </tr>
+
+            <tr>
+              <td>
+                <label for="expiration">Expiration</label><br>
+                <input type="text" id="expiration" class ="expriation" required>
+              </td>
+
+              <td colspan="1">
+                <label for="cvv">CVV</label><br>
+                <input type="text" id="cvv" class ="cvv" required>
+              </td>
+            </tr>
+          </table>
+
+          <hr>
+          <button type="submit">Continue to checkout</button>
+
+          <div class="mark">
+            © 2017-2025 Company Name <br />
+            <a href="#">Privacy</a> <a href="#">Terms</a> <a href="#">Support</a>
+          </div>
+        </td>
+
+        <!-- 오른쪽 -->
+        <td class="rightcontent">
+          <span class="title1">Your cart</span>
+          <span class="title2">3</span>
+          <ul class="list">
+            <li>
+              <div>
+                <div class="content1">Product name</div>
+                <div class="content2">Brief description</div>
+              </div>
+              <span class="content3">$12</span>
+            </li>
+            <li>
+              <div>
+                <div class="content1">Second product</div>
+                <div class="content2">Brief description</div>
+              </div>
+              <span class="content3">$8</span>
+            </li>
+            <li>
+              <div>
+                <div class="content1">Third item</div>
+                <div class="content2">Brief description</div>
+              </div>
+              <span class="content3">$5</span>
+            </li>
+            <li class="other_color">
+              <div>
+                <div class="content1">Promo code</div>
+                <div class="other_color1">EXAMPLECODE</div>
+              </div>
+              <span class="content3">- $5</span>
+            </li>
+            <li>
+              <div>Total (USD)</div>
+              <span class="content3_last">$20</span>
+            </li>
+          </ul>
+
+          <div class="promo">
+            <input type="text" class="input_promo" placeholder="Promo code">
+            <button type="submit1" class="click_promo">Redeem</button>
+          </div>
+
+          <div class="memo_box">
+            <label for="textarea">Memo</label>
+            <textarea id="textarea" rows="8"></textarea>
+          </div>
+
+          <div class="date_box">
+            <label for="input_date">Today's Date</label>
+            <input type="date" id="input_date">
+          </div>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>
