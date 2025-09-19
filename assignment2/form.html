@@ -7,12 +7,12 @@
 </head>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-weight : bold;
       margin: 20px;
       padding: 20px;
     }
     h1 {
-      font-size : 37px;
+      font-size : 40px;
       font-weight: bold;
     }
     input[type=text] {
@@ -31,7 +31,7 @@
       background-color: blue;
       color: white;
     }
-    .delete {
+    .del {
       background-color: green;
       color: white;
     }
@@ -41,55 +41,55 @@
     li {
       margin: 4px;
     }
+
   </style>
 </head>
 
 <body>
   <h1>Dynamic Web page</h1>
   <input type="text" id="input_fruit" placeholder="apple, banana, kiwi">
-  <button class="add" onclick="addItem()">추가</button>
-  <button class="delete" onclick="clearItems()">삭제</button>
+  <button class="add" onclick = "add()" type="button"> 추가 </button>
+  <button class="del" onclick = "del()" type="button"> 삭제 </button>
 
   <ul id="itemList"></ul>
     <script>
+      
         window.onload = function() {
-        document.getElementById("input_fruit").focus();
+          document.getElementById("input_fruit").focus();
         }
 
-        // 항목 추가
-        function addItem() {
-        const input = document.getElementById("input_fruit");
-        const text = input.value.trim();
-        if (text === "") {
-            alert("추가할 내용을 입력하세요!");
+        function add() {
+
+          var input = document.getElementById("input_fruit");
+          var text = input.value.trim();
+          if (text === "") {
+              alert("추가할 내용을 입력하세요!");
             return;
-        }
+          }
 
-        // 쉼표(,)로 여러 개 입력 시 분
-        const items = text.split(",");
-        items.forEach(function(item) {
-            const trimmed = item.trim();
-            if (trimmed) {
-            const li = document.createElement("li");
-            li.textContent = trimmed;
-            li.onclick = function() {
-                this.remove(); // 개별 항목 클릭 시 삭제
-            };
-            document.getElementById("itemList").appendChild(li);
+          var i = text.split(","); // , 로 split!
+
+
+          for (var j = 0; j < i.length; j++) {
+            var tri = i[j].trim();
+            if (tri !== "") {
+              var li = document.createElement("li");
+              li.textContent = tri;
+              document.getElementById("itemList").appendChild(li);
             }
-        });
+          }
 
-        input.value = "";
-        input.focus();
+          input.value = "";
+          input.focus();
         }
+
 
         // 목록 전체 삭제
-        function clearItems() {
-        const list = document.getElementById("itemList");
-        list.innerHTML = "";
+        function del() {
+          var list = document.getElementById("itemList").innerHTML = " ";
         }
         
-  </script> 
+  </script>  
 
 </body>
 </html>
