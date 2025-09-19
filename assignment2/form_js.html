@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -151,7 +150,7 @@
 
     .list li {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-between; /* 수직 방향으로 Flexbox 레이아웃 속성 */ 
       padding: 8px 10px;
       border-bottom: 1px solid #dee2e6;
       font-size: 14px;
@@ -240,7 +239,7 @@
         <td class="leftcontent">
           <h2 class="content_head">Billing address</h2>
           <table>
-            <!-- 1행: First / Last name -->
+            <!-- First / Last name -->
             <tr class="row0">
               <td colspan="2" class="first_name">
                 <label for="first_name">First name</label><br>
@@ -252,7 +251,7 @@
               </td>
             </tr>
 
-            <!-- 2행: Username -->
+            <!-- Username -->
             <tr class="row1">
               <td colspan="3">
                 <label for="username">Username</label><br>
@@ -271,7 +270,7 @@
               </td>
             </tr>
 
-            <!-- 4행: Address -->
+            <!-- Address -->
             <tr class="row4">
               <td colspan="3">
                 <label for="address">Address</label><br>
@@ -279,7 +278,7 @@
               </td>
             </tr>
 
-            <!-- 5행: Address2 -->
+            <!-- Address2 -->
             <tr class="row5">
               <td colspan="3">
                 <label for="address2">Address 2 (Optional)</label><br>
@@ -287,7 +286,7 @@
               </td>
             </tr>
 
-            <!-- 6행: Country / State / Zip -->
+            <!-- Country / State / Zip -->
             <tr class="row6" >
               <td colspan="1" class = "conutry">
                 <label for="country">Country</label><br>
@@ -424,6 +423,66 @@
 
   <script>
 
+    window.onload = function () {
+      alert("Welcome to Checkout form!");
+    };
+  
+    document.getElementById("cvv").onmouseover = function () {
+      console.log("onmouseover");
+    };
+
+    document.getElementById("cvv").onmouseout = function () {
+      console.log("onmouseout");
+    };
+  
+    document.querySelector(".click_promo").onclick = function (event) {
+      var promo = document.querySelector(".input_promo").value;
+      if (promo === "") {
+        alert("Input Code");
+      } 
+      else if (promo === "EXAMPLECODE") {
+        alert("Correct!");
+      } 
+      else {
+        alert("Wrong!");
+      }
+    };
+
+    function validateForm() {
+  
+      var firstname = document.getElementById("firstname");
+      var lastname = document.getElementById("lastname");
+      var username = document.getElementById("username");
+      var address = document.getElementById("address");
+      var country = document.getElementById("country");
+      var state = document.getElementById("state");
+      var zip = document.getElementById("zip");
+      var name_on_card = document.getElementById("name_on_card");
+      var card_number = document.getElementById("card_number");
+      var expiration = document.getElementById("expiration");
+      var cvv = document.getElementById("cvv");
+  
+      if (firstname.value == "" || lastname.value == "" || username.value == "" || !address.value == "" || country.value == "" || state.value == "" || zip.value == "" || name_on_card.value == "" || card_number.value == "" || expiration.value == "" || cvv.value == "") {
+        alert("invalid");
+        return false;
+      }
+        return true;
+    }
+
+    if(validateForm == true){
+        
+      var result = confirm("continue checkout?");
+      if (result) {
+        alert("Complete!");
+      } 
+      else {
+        alert("Cancel!");
+      }
+
+
+    }
+
   </script>
 </body>
 </html>
+
