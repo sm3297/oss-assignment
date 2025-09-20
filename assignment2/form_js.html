@@ -232,7 +232,7 @@
     </div>
   </div>
 
-  <form action="form_ok.html" method="POST">
+  <form action="form_ok.html" method="POST" onsubmit="return validateForm()">
     <table>
       <tr>
         <!-- 왼쪽 -->
@@ -434,22 +434,8 @@
     document.getElementById("cvv").onmouseout = function () {
       console.log("onmouseout");
     };
-  
-    document.querySelector(".click_promo").onclick = function (event) {
-      var promo = document.querySelector(".input_promo").value;
-      if (promo === "") {
-        alert("Input Code");
-      } 
-      else if (promo === "EXAMPLECODE") {
-        alert("Correct!");
-      } 
-      else {
-        alert("Wrong!");
-      }
-    };
 
     function validateForm() {
-  
       var firstname = document.getElementById("firstname");
       var lastname = document.getElementById("lastname");
       var username = document.getElementById("username");
@@ -462,27 +448,67 @@
       var expiration = document.getElementById("expiration");
       var cvv = document.getElementById("cvv");
   
-      if (firstname.value == "" || lastname.value == "" || username.value == "" || !address.value == "" || country.value == "" || state.value == "" || zip.value == "" || name_on_card.value == "" || card_number.value == "" || expiration.value == "" || cvv.value == "") {
-        alert("invalid");
+      if (!firstname.value){
+        alert("Please input First name!");
         return false;
       }
-        return true;
-    }
-
-    if(validateForm == true){
         
-      var result = confirm("continue checkout?");
-      if (result) {
-        alert("Complete!");
-      } 
-      else {
-        alert("Cancel!");
+      else if(!lastname.value){
+        alert("Please input Last name!");
+        return false;
       }
 
+      else if(!username.value){
+        alert("Please input Username!");
+        return false;
+      }
 
+      else if(!address.value){
+        alert("Please input Address!");
+        return false;
+      }
+
+      else if(!country.value){
+        alert("Please choose Country!");
+        return false;
+      }
+
+      else if(!state.value){
+        alert("Please choose State!");
+        return false;
+      }
+
+      else if(!zip.value){
+        alert("Please input Zip!");
+        return false;
+      }
+
+      else if(!name_on_card.value){
+        alert("Please input Name on card!");
+        return false;
+      }
+
+      else if(!card_number.value){
+        alert("Please input Credit card number!");
+        return false;
+      }
+
+      else if(!expiration.value){
+        alert("Please input Expiration!");
+        return false;
+      }
+
+      else if(!cvv.value){
+        alert("Please input CVV!");
+        return false;
+      }
+      return true;
     }
-
+  
+    document.querySelector("button[type='submit']").onclick = function (event) {
+      if (!validateForm()) return;
+    };
   </script>
+  
 </body>
 </html>
-
