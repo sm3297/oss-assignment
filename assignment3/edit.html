@@ -118,7 +118,7 @@
             }
 
             let e_part = email.split('@');
-            if (!email.includes('@') || e_part[0] === '' || e_part[1] === '' || !e_part[1].includes('.') || !e_part[1].includes('com') || !e_part[1].includes('net') || !e_part[1].includes('co.kr')) {
+            if (!email.includes('@') || e_part[0] === '' || e_part[1] === '' || !e_part[1].includes('.')) {
                 alert("Please correct the email address! (예: handong@naver.com)");
                 return;
             }
