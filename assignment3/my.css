@@ -1,0 +1,73 @@
+
+/*모든 페이지 공통*/
+
+.header {
+    text-align: center; 
+}
+
+span{
+    color:red;
+}
+
+/*index.html*/
+.filter-bar {
+    display: flex;
+    flex-direction: column; 
+}
+.filter-bar .filter-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.hide-until-md { 
+    display: none; 
+}
+
+/*view.html*/
+.detail-label {
+    font-weight: bold;
+    background-color: lightgray;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+}
+
+@media (min-width: 768px) {
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+    .header .title {
+        margin-bottom: 0;
+    }
+
+    .filter-bar {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .filter-bar .filter-controls {
+        flex-direction: row;
+    }
+    .filter-bar .form-control, .filter-bar .form-select {
+        width: auto; 
+    }
+
+    .hide-until-md {
+        display: table-cell;
+    }
+
+    /*view.html*/
+    .detail-label {
+        font-weight: bold;
+        background-color: lightgray;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 10px;
+    }
+
+}
+
