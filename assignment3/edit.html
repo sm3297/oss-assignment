@@ -84,46 +84,46 @@
 
     <script>
         document.querySelector('form').addEventListener('submit', function(event) {
-            event.preventDefault(); 
+        event.preventDefault(); 
 
-            let name = document.getElementById('name').value;
-            let relationship = document.getElementById('relationship').value;
-            let phone = document.getElementById('phone').value;
-            let email = document.getElementById('email').value;
+        let name = document.getElementById('name').value;
+        let relationship = document.getElementById('relationship').value;
+        let phone = document.getElementById('phone').value;
+        let email = document.getElementById('email').value;
                 
-            if (name === ''){
-              alert("Please enter a name!");
-              return;
+        if (name === ''){
+            alert("Please enter a name!");
+            return;
             }
 
-            if (relationship === 'Select relationship') {
-                alert('Please select a relationship!');
+            if (relationship === "Select relationship") {
+                alert("Please select a relationship!");
+                return;
+            }
+
+            if(phone === '') {
+                alert("Phone enter a number!");
                 return;
             }
 
             let p_part = phone.split('-');
-            if ((phone === '') || (p_part.length !== 3) || (p_part[0] !== '010') || (p_part[1].length !== 4) || (p_part[2].length !== 4) || isNaN(p_part[1]) || isNaN(p_part[2])) {
-                if(phone === '') {
-                    alert('Phone enter a number!');
-                }
-                else{
-                    alert('Please correct the phone number! (예: 010-1234-5678)');
-                }
+            if ((p_part.length !== 3) || (p_part[0] !== "010") || (p_part[1].length !== 4) || (p_part[2].length !== 4) || isNaN(p_part[1]) || isNaN(p_part[2])) {
+                alert("Please correct the phone number! (예: 010-1234-5678)");   
+                return;
+            }
+        
+            if(email === '') {
+                alert('Email enter a email!');
                 return;
             }
 
             let e_part = email.split('@');
-            if (email.includes(' ') || !email.includes('@') || e_part.length !== 2 || e_part[0] === '' || e_part[1] === '' || !e_part[1].includes('.')) {
-                if(email === '') {
-                    alert('Email enter a email!');
-                }
-                else{
-                    alert('Please correct the email address!');
-                }
+            if (!email.includes('@') || e_part[0] === '' || e_part[1] === '' || !e_part[1].includes('.') || !e_part[1].includes('com') || !e_part[1].includes('net') || !e_part[1].includes('co.kr')) {
+                alert("Please correct the email address! (예: handong@naver.com)");
                 return;
             }
 
-            alert('게시물이 추가됩니다');
+              alert('게시물이 추가됩니다');
         });
     </script>
 </body>
