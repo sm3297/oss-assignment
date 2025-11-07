@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품 관리</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <h1>상품 관리</h1>
+
+    id : <input type="text" id="input_id" placeholder="1"/> <br />
+    품목(type) : <input type="text" id="input_type" placeholder="electronics"/> <br />
+    품명(name) : <input type="text" id="input_name" placeholder="smartphone"/> <br />
+    가격(price) : <input type="number" id="input_price" placeholder="900000"/> <br />
+    재고 (stock) : <input type="number" id="input_stock" placeholder="10"/> <br />
+
+    <br /> 
+
+    <button id="btn_add">입력하기(C)</button>
+    <button id="btn_detail">조회하기(R)</button>
+    <button id="btn_update">수정하기(U)</button>
+    <button id="btn_delete">삭제하기(D)</button>
+
+    <button id="btn_list">목록 보기</button>
+    <hr />
+
+    <h2>상품 목록</h2>
+    <div id="div_list"></div>
+
+    <script>
+        
+        $(function(){
+
+            $("#btn_add").click(function(){
+                alert("add products?");
+
+                const xhr = new XMLHttpRequest();
+                xhr.open("POST","http://localhost:3000/products");
+                xhr.setRequestHeader("content-type","application/json");
+                let data = { type: $("#input_type").val(), name: $("#input_name").val(), price: $("#input_price").val(), stock: $("#input_stock").val() };
+                xhr.send(JSON.stringify(data));
+                xhr.onload = () => {
+                    if (xhr.status === 200) {
+                        let res = JSON.parse(xhr.response);
+                        alert(JSON.stringify(res));
+                    } else {
+                        console.log(xhr.status, xhr.statusText);
+                    }
+                }
+            });
+
+
+            $("#btn_detail").click(function(){
+                alert("detail product?");
+
+                const xhr = new XMLHttpRequest();
+                xhr.open("GET","http://localhost:3000/products/" + $("#input_id").val());
+                xhr.setRequestHeader("content-type","application/json");
+                xhr.send();
+                xhr.onload = () => {
+                    if (xhr.status === 200) {
+                        let res = JSON.parse(xhr.response);
+                        alert(JSON.stringify(res));
+                    } else {
+                        console.log(xhr.status, xhr.statusText);
+                    }
+                }
+            });
+
+            $("#btn_update").click(function(){
+                alert("update products?");
+
+                const xhr = new XMLHttpRequest();
+                xhr.open("PUT","http://localhost:3000/products/" + $("#input_id").val());
+                xhr.setRequestHeader("content-type","application/json");
+                let data = { type: $("#input_type").val(), name: $("#input_name").val(), price: $("#input_price").val(), stock: $("#input_stock").val() };
+                xhr.send(JSON.stringify(data));
+                xhr.onload = () => {
+                    if (xhr.status === 200) {
+                        let res = JSON.parse(xhr.response);
+                        alert(JSON.stringify(res));
+                    } else {
+                        console.log(xhr.status, xhr.statusText);
+                    }
+                }
+            });
+
+            $("#btn_delete").click(function(){
+                alert("delete products?");
+
+                const xhr = new XMLHttpRequest();
+                xhr.open("DELETE","http://localhost:3000/products/" + $("#input_id").val());
+                xhr.setRequestHeader("content-type","application/json");
+                xhr.send();
+                xhr.onload = () => {
+                    if (xhr.status === 200) {
+                        let res = JSON.parse(xhr.response);
+                        alert(JSON.stringify(res));
+                    } else {
+                        console.log(xhr.status, xhr.statusText);
+                    }
+                }
+            });
+
+            $("#btn_list").click(function(){
+                alert("get products?");
+                const xhr = new XMLHttpRequest();
+                xhr.open("GET","http://localhost:3000/products");
+                xhr.setRequestHeader("content-type","application/json");
+                xhr.send();
+                xhr.onload = () => {
+                    if (xhr.status === 200) {
+                        let res = JSON.parse(xhr.response);
+                        //alert(JSON.stringify(res));
+                        $("#div_list").html("");
+                        res.forEach(function(each){
+                            $("#div_list").append(`<div>${each.id} : ${each.name} | 품목 : ${each.type} | 가격 : ${each.price}원 | 재고 (${each.stock})</div>`);
+                        });
+                    } else {
+                        console.log(xhr.status, xhr.statusText);
+                    }
+                }
+            });
+
+        });
+    </script>
+
+</body>
+</html>
