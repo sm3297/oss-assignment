@@ -1,81 +1,81 @@
 {
-    "products": [
+  "products": [
     {
-        "id": "1",
-        "type": "electronics",
-        "name": "smartphone",
-        "price": 900000,
-        "stock": 10
+      "id": "1PE01",
+      "type": "electronics",
+      "name": "smartphone",
+      "price": 900000,
+      "stock": 10
     },
     {
-        "id": "2",
-        "type": "electronics",
-        "name": "notebook",
-        "price": 1500000,
-        "stock": 20
+      "id": "2PE02",
+      "type": "electronics",
+      "name": "notebook",
+      "price": 1500000,
+      "stock": 20
     },
     {
-        "id": "3",
-        "type": "furniture",
-        "name": "desk",
-        "price": 300000,
-        "stock": 5
+      "id": "3PF03",
+      "type": "furniture",
+      "name": "desk",
+      "price": 300000,
+      "stock": 5
     },
     {
-        "id": "4",
-        "type": "furniture",
-        "name": "chair",
-        "price": 150000,
-        "stock": 15
+      "id": "4PF04",
+      "type": "furniture",
+      "name": "chair",
+      "price": 150000,
+      "stock": 15
     },
     {
-        "id": "5",
-        "type": "appliance",
-        "name": "refrigerator",
-        "price": 2000000,
-        "stock": 3
+      "id": "5PA05",
+      "type": "appliance",
+      "name": "refrigerator",
+      "price": 2000000,
+      "stock": 3
     },
     {
-        "id": "6",
-        "type": "appliance",
-        "name": "microwave",
-        "price": 800000,
-        "stock": 7
+      "id": "6PA06",
+      "type": "appliance",
+      "name": "microwave",
+      "price": 800000,
+      "stock": 7
     },
     {
-        "id": "7",
-        "type": "clothing",
-        "name": "t-shirt",
-        "price": 200000,
-        "stock": 50
+      "id": "7PC07",
+      "type": "clothing",
+      "name": "T_shirt",
+      "price": 200000,
+      "stock": 50
     },
     {
-        "id": "8",
-        "type": "clothing",
-        "name": "jeans",
-        "price": 400000,
-        "stock": 30
+      "id": "8PC08",
+      "type": "clothing",
+      "name": "jeans",
+      "price": 400000,
+      "stock": 30
     },
     {
-        "id": "9",
-        "type": "toy",
-        "name": "action figure",
-        "price": 150000,
-        "stock": 25
+      "id": "9PT09",
+      "type": "toy",
+      "name": "action figure",
+      "price": 150000,
+      "stock": 25
     },
     {
-        "id": "10",
-        "type": "toy",
-        "name": "puzzle",
-        "price": 100000,
-        "stock": 40
+      "id": "10PT10",
+      "type": "toy",
+      "name": "puzzle",
+      "price": 100000,
+      "stock": 40
     },
     {
-        "id": "11",
-        "type": "book",
-        "name": "novel",
-        "price": 120000,
-        "stock": 60
+      "id": "1PB11",
+      "type": "book",
+      "name": "novel",
+      "price": 120000,
+      "stock": 60
     }
-    ]
-  }
+  ]
+}
