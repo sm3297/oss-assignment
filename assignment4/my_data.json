@@ -11,8 +11,8 @@
       "id": "2PE02",
       "type": "electronics",
       "name": "notebook",
-      "price": 1500000,
-      "stock": 20
+      "price": "1100000",
+      "stock": "50"
     },
     {
       "id": "3PF03",
