@@ -147,7 +147,7 @@
                 }
 
                 const xhr = new XMLHttpRequest();
-                xhr.open("POST","https://6917f5d221a96359486e5d31.mockapi.io/Product_System");
+                xhr.open("POST","https://6917f5d221a96359486e5d31.mockapi.io/products");
                 xhr.setRequestHeader("content-type","application/json");
                 let data = { id: $("#input_id").val(), type: $("#input_type").val(), name: $("#input_name").val(), price: $("#input_price").val(), stock: $("#input_stock").val() };
                 xhr.send(JSON.stringify(data));
@@ -166,7 +166,7 @@
                 alert("조회 하시겠습니까?");
 
                 const xhr = new XMLHttpRequest();
-                xhr.open("GET","https://6917f5d221a96359486e5d31.mockapi.io/Product_System/" + $("#input_id").val());
+                xhr.open("GET","https://6917f5d221a96359486e5d31.mockapi.io/products/" + $("#input_id").val());
                 xhr.setRequestHeader("content-type","application/json");
                 xhr.send();
                 xhr.onload = () => {
@@ -188,7 +188,7 @@
                 }
 
                 const xhr = new XMLHttpRequest();
-                xhr.open("PUT","https://6917f5d221a96359486e5d31.mockapi.io/Product_System/" + $("#input_id").val());
+                xhr.open("PUT","https://6917f5d221a96359486e5d31.mockapi.io/products/" + $("#input_id").val());
                 xhr.setRequestHeader("content-type","application/json");
                 let data = { id: $("#input_id").val(),type: $("#input_type").val(), name: $("#input_name").val(), price: $("#input_price").val(), stock: $("#input_stock").val() };
                 xhr.send(JSON.stringify(data));
@@ -211,7 +211,7 @@
                 }
 
                 const xhr = new XMLHttpRequest();
-                xhr.open("DELETE","https://6917f5d221a96359486e5d31.mockapi.io/Product_System/" + $("#input_id").val());
+                xhr.open("DELETE","https://6917f5d221a96359486e5d31.mockapi.io/products/" + $("#input_id").val());
                 xhr.setRequestHeader("content-type","application/json");
                 xhr.send();
                 xhr.onload = () => {
@@ -226,7 +226,7 @@
 
             $("#btn_list").click(function(){
                 const xhr = new XMLHttpRequest();
-                xhr.open("GET","https://6917f5d221a96359486e5d31.mockapi.io/Product_System");
+                xhr.open("GET","https://6917f5d221a96359486e5d31.mockapi.io/products");
                 xhr.setRequestHeader("content-type","application/json");
                 xhr.send();
                 xhr.onload = () => {
