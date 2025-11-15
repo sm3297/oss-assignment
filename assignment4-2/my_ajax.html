@@ -211,7 +211,7 @@
                 }
 
                 const xhr = new XMLHttpRequest();
-                xhr.open("DELETE","https://6917f5d221a96359486e5d31.mockapi.io/Product_System" + $("#input_id").val());
+                xhr.open("DELETE","https://6917f5d221a96359486e5d31.mockapi.io/Product_System/" + $("#input_id").val());
                 xhr.setRequestHeader("content-type","application/json");
                 xhr.send();
                 xhr.onload = () => {
