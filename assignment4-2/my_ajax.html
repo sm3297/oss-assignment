@@ -147,7 +147,7 @@
                 }
 
                 const xhr = new XMLHttpRequest();
-                xhr.open("POST","http://localhost:3000/products");
+                xhr.open("POST","https://6917f5d221a96359486e5d31.mockapi.io/Product_System");
                 xhr.setRequestHeader("content-type","application/json");
                 let data = { id: $("#input_id").val(), type: $("#input_type").val(), name: $("#input_name").val(), price: $("#input_price").val(), stock: $("#input_stock").val() };
                 xhr.send(JSON.stringify(data));
@@ -166,7 +166,7 @@
                 alert("조회 하시겠습니까?");
 
                 const xhr = new XMLHttpRequest();
-                xhr.open("GET","http://localhost:3000/products/" + $("#input_id").val());
+                xhr.open("GET","https://6917f5d221a96359486e5d31.mockapi.io/Product_System" + $("#input_id").val());
                 xhr.setRequestHeader("content-type","application/json");
                 xhr.send();
                 xhr.onload = () => {
